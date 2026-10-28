@@ -1,0 +1,377 @@
+/* ==========================================================================
+   BiteRush - global.css
+   Midnight Saffron Design System (Dark Premium Core Tokens & Global Utilities)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+/* ==========================================================================
+   Design System Tokens (Midnight Saffron)
+   ========================================================================== */
+:root {
+  /* Surfaces */
+  --bg: #0F0E0D;
+  --surface: #1A1816;
+  --surface-2: #242120;
+  --surface-3: #2E2A27;
+  --border: #2E2A27;
+  --border-hover: rgba(245, 166, 35, 0.35);
+
+  /* Text */
+  --text: #F5F0E8;
+  --text-muted: #A39B90;
+  --text-dim: #706960;
+  --text-dark: #0F0E0D;
+
+  /* Brand Colors */
+  --primary: #F5A623;       /* Saffron */
+  --primary-hover: #FFB84D;
+  --accent: #C8452B;        /* Chilli Red (Offers & Cancelled Badges) */
+  --success: #3FB67A;       /* Emerald Green (Delivered) */
+
+  /* Shape and Depth */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.65);
+
+  /* Typography */
+  --font-head: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Motion */
+  --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 200ms ease;
+}
+
+/* ==========================================================================
+   CSS Reset & Base Rules
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ==========================================================================
+   Typography Hierarchy
+   - Headings: Playfair Display 600/700
+   - Body: Inter 400/500/600
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+p {
+  color: var(--text);
+}
+
+.text-orange,
+.highlight {
+  color: var(--primary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Global Container (Strictly 1200px max-width on every page)
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Button System
+   - Pill-shaped
+   - 44px min height
+   - 200ms transitions only
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition);
+  user-select: none;
+  line-height: 1.2;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primary Button: Solid Saffron, Dark Text */
+.btn-primary {
+  background-color: var(--primary);
+  color: #0F0E0D !important;
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #0F0E0D !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.45);
+}
+
+/* Outline Button: Transparent, Border */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-outline:hover {
+  background-color: rgba(245, 166, 35, 0.08);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Danger Button: Outlined Chilli Red (#C8452B) */
+.btn-danger {
+  background-color: transparent;
+  color: #FFA594;
+  border-color: var(--accent);
+}
+
+.btn-danger:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(200, 69, 43, 0.35);
+}
+
+.btn-sm {
+  min-height: 36px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Form Controls
+   ========================================================================== */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left !important;
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  background-color: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-size: 0.94rem;
+  font-family: var(--font-body);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.auth-input-wrapper input,
+.auth-input-wrapper select,
+.auth-input-wrapper textarea {
+  padding-left: 50px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-dim);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+}
+
+/* ==========================================================================
+   Cards (Surface bg, 1px border, 16px radius, hover lift translateY(-4px))
+   ========================================================================== */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-hover);
+}
+
+/* ==========================================================================
+   Status Pills
+   - Pending / Placed: Amber
+   - Delivered: Green
+   - Cancelled: Red
+   ========================================================================== */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  line-height: 1.3;
+}
+
+.status-pending,
+.status-placed {
+  background-color: rgba(245, 166, 35, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+.status-delivered,
+.status-complete {
+  background-color: rgba(63, 182, 122, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(63, 182, 122, 0.3);
+}
+
+.status-cancelled {
+  background-color: rgba(200, 69, 43, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(200, 69, 43, 0.3);
+}
+
+/* ==========================================================================
+   Custom Dark Scrollbar
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-3);
+}

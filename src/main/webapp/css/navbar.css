@@ -1,0 +1,587 @@
+/* ==========================================================================
+   BiteRush - navbar.css
+   Midnight Saffron Navigation (72px Sticky Blur Bar, Single Flex Row)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(15, 14, 13, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border, #2E2A27);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   Single Horizontal Flex Row (Height: 72px)
+   ========================================================================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 24px;
+  position: relative;
+}
+
+/* Hidden Mobile Checkbox Toggle */
+.nav-toggle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   Logo (Left)
+   ========================================================================== */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text, #F5F0E8);
+  font-family: var(--font-head, 'Playfair Display', serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  transition: opacity 200ms ease;
+}
+
+.brand:hover {
+  opacity: 0.92;
+}
+
+.brand-icon-box {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary, #F5A623) 0%, #D98207 100%);
+  color: #0F0E0D;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+  flex-shrink: 0;
+}
+
+.brand-icon-svg {
+  stroke: #0F0E0D;
+}
+
+.brand-text {
+  display: inline-block;
+  line-height: 1;
+}
+
+.brand-highlight {
+  color: var(--primary, #F5A623);
+}
+
+/* ==========================================================================
+   Nav Links (Center / Left)
+   ========================================================================== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text-muted, #A39B90);
+  text-decoration: none;
+  padding: 8px 0;
+  position: relative;
+  transition: color 200ms ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--text, #F5F0E8);
+}
+
+/* Active Link: Saffron Underline */
+.nav-link.is-active,
+.nav-link.active {
+  color: var(--primary, #F5A623);
+  font-weight: 600;
+}
+
+.nav-link.is-active::after,
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary, #F5A623);
+  border-radius: var(--radius-pill, 9999px);
+  box-shadow: 0 0 8px rgba(245, 166, 35, 0.55);
+}
+
+/* ==========================================================================
+   Actions (Right: Cart + Log out / Auth)
+   ========================================================================== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Cart Button */
+.nav-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--surface, #1A1816);
+  border: 1px solid var(--border, #2E2A27);
+  color: var(--text, #F5F0E8);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill, 9999px);
+  text-decoration: none;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.nav-cart-svg {
+  stroke: var(--text, #F5F0E8);
+  transition: stroke 200ms ease, transform 200ms ease;
+}
+
+.nav-cart-btn:hover {
+  background-color: var(--surface-2, #242120);
+  border-color: var(--primary, #F5A623);
+  color: var(--primary, #F5A623);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.22);
+}
+
+.nav-cart-btn:hover .nav-cart-svg {
+  stroke: var(--primary, #F5A623);
+  transform: scale(1.1);
+}
+
+.nav-cart-btn.is-active {
+  border-color: var(--primary, #F5A623);
+  color: var(--primary, #F5A623);
+  background-color: rgba(245, 166, 35, 0.08);
+}
+
+/* Live Item-Count Badge: Saffron Circle */
+.nav-cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill, 9999px);
+  background-color: var(--primary, #F5A623);
+  color: #0F0E0D;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(245, 166, 35, 0.4);
+}
+
+/* ==========================================================================
+   Modern Profile Avatar Button & Hover Dropdown
+   ========================================================================== */
+.nav-profile-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Invisible hover bridge to eliminate dead gap between button and dropdown */
+.nav-profile-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 14px;
+  background: transparent;
+}
+
+/* Profile Trigger Button */
+.nav-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: var(--surface, #1A1816);
+  border: 1px solid var(--border, #2E2A27);
+  color: var(--text, #F5F0E8);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 5px 14px 5px 6px;
+  min-height: 40px;
+  border-radius: var(--radius-pill, 9999px);
+  cursor: pointer;
+  outline: none;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.nav-profile-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.25) 0%, rgba(245, 166, 35, 0.08) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  color: var(--primary, #F5A623);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 200ms ease, background 200ms ease, color 200ms ease;
+}
+
+.nav-profile-name {
+  color: var(--text, #F5F0E8);
+  font-size: 0.9rem;
+  font-weight: 600;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.nav-profile-chevron {
+  stroke: var(--text-muted, #A39B90);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), stroke 200ms ease;
+  flex-shrink: 0;
+}
+
+/* Hover and Focus States for Trigger */
+.nav-profile-btn:hover,
+.nav-profile-dropdown:hover .nav-profile-btn,
+.nav-profile-dropdown:focus-within .nav-profile-btn,
+.nav-profile-dropdown.is-open .nav-profile-btn {
+  background-color: var(--surface-2, #242120);
+  border-color: var(--primary, #F5A623);
+  color: var(--primary, #F5A623);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.22);
+}
+
+.nav-profile-btn:hover .nav-profile-avatar,
+.nav-profile-dropdown:hover .nav-profile-avatar,
+.nav-profile-dropdown:focus-within .nav-profile-avatar,
+.nav-profile-dropdown.is-open .nav-profile-avatar {
+  background: linear-gradient(135deg, var(--primary, #F5A623) 0%, #D98207 100%);
+  color: #0F0E0D;
+  border-color: var(--primary, #F5A623);
+  transform: scale(1.05);
+}
+
+.nav-profile-btn:hover .nav-profile-chevron,
+.nav-profile-dropdown:hover .nav-profile-chevron,
+.nav-profile-dropdown:focus-within .nav-profile-chevron,
+.nav-profile-dropdown.is-open .nav-profile-chevron {
+  stroke: var(--primary, #F5A623);
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Modern Dropdown Menu Panel (Midnight Saffron Glass)
+   ========================================================================== */
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 230px;
+  background: rgba(24, 22, 20, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border, #2E2A27);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(245, 166, 35, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1200;
+}
+
+/* Open Dropdown on Hover or Click */
+.nav-profile-dropdown:hover .nav-dropdown-menu,
+.nav-profile-dropdown:focus-within .nav-dropdown-menu,
+.nav-profile-dropdown.is-open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Header inside Dropdown */
+.nav-dropdown-header {
+  padding: 8px 10px 8px;
+}
+
+.nav-dropdown-greeting {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim, #7A7265);
+  margin-bottom: 2px;
+}
+
+.nav-dropdown-username-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nav-dropdown-username {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text, #F5F0E8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-dropdown-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: rgba(245, 166, 35, 0.18);
+  color: var(--primary, #F5A623);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  padding: 2px 7px;
+  border-radius: var(--radius-pill, 9999px);
+  flex-shrink: 0;
+}
+
+.nav-dropdown-email {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted, #A39B90);
+  margin-top: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-dropdown-divider {
+  height: 1px;
+  background-color: var(--border, #2E2A27);
+  margin: 6px 0;
+}
+
+/* List items */
+.nav-dropdown-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: var(--text, #F5F0E8);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 160ms ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-dropdown-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted, #A39B90);
+  flex-shrink: 0;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-dropdown-item:hover {
+  background-color: rgba(245, 166, 35, 0.12);
+  color: var(--primary, #F5A623);
+  transform: translateX(3px);
+}
+
+.nav-dropdown-item:hover .nav-dropdown-icon {
+  color: var(--primary, #F5A623);
+  transform: scale(1.1);
+}
+
+.nav-dropdown-item.is-active {
+  background-color: rgba(245, 166, 35, 0.16);
+  color: var(--primary, #F5A623);
+  font-weight: 600;
+}
+
+.nav-dropdown-item.is-active .nav-dropdown-icon {
+  color: var(--primary, #F5A623);
+}
+
+/* Logout link with warm red danger accent */
+.nav-dropdown-item.nav-dropdown-logout {
+  color: var(--text-muted, #A39B90);
+}
+
+.nav-dropdown-item.nav-dropdown-logout:hover {
+  background-color: rgba(200, 69, 43, 0.14);
+  color: #FFA594;
+  transform: translateX(3px);
+}
+
+.nav-dropdown-item.nav-dropdown-logout:hover .nav-dropdown-icon {
+  color: #FFA594;
+  transform: scale(1.1);
+}
+
+/* Legacy fallback if needed */
+.btn-logout-outline {
+  display: none;
+}
+
+/* Guest Links: Login & Signup */
+.nav-login-link {
+  margin-right: 4px;
+}
+
+.btn-signup {
+  padding: 8px 20px !important;
+  font-size: 0.88rem !important;
+  border-radius: var(--radius-pill, 9999px) !important;
+}
+
+/* Mobile Hamburger Label (Hidden by default on Desktop) */
+.nav-burger-label {
+  display: none;
+  cursor: pointer;
+  color: var(--text, #F5F0E8);
+  padding: 6px;
+  border-radius: 8px;
+  transition: color 200ms ease;
+}
+
+.nav-burger-label:hover {
+  color: var(--primary, #F5A623);
+}
+
+.nav-burger-label svg {
+  display: block;
+}
+
+/* ==========================================================================
+   Mobile Responsive Styles (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    height: 64px;
+    gap: 16px;
+  }
+
+  .nav-burger-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dropdown Panel */
+  .nav-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 24, 22, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border, #2E2A27);
+    padding: 24px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 999;
+  }
+
+  .nav-toggle-input:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    padding: 6px 0;
+    width: 100%;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .nav-cart-btn {
+    padding: 6px 14px;
+    font-size: 0.84rem;
+  }
+
+  .nav-profile-name {
+    display: none;
+  }
+  
+  .nav-profile-btn {
+    padding: 4px 8px 4px 5px;
+    gap: 6px;
+    min-height: 36px;
+  }
+
+  .nav-dropdown-menu {
+    right: -8px;
+    max-width: calc(100vw - 24px);
+  }
+}

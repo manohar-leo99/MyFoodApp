@@ -1,0 +1,6 @@
+/* ==========================================================================
+   BiteRush - common.css
+   Re-exports & forwards the complete global design system
+   ========================================================================== */
+
+@import url('global.css');

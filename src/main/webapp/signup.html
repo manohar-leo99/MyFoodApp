@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | BiteRush</title>
+    <meta name="description" content="Join BiteRush to experience artisanal food delivery from top local eateries.">
+
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <!-- BiteRush Stylesheets -->
+    <link rel="stylesheet" href="css/global.css?v=4">
+    <link rel="stylesheet" href="css/common.css?v=4">
+    <link rel="stylesheet" href="css/auth.css?v=4">
+</head>
+<body class="auth-page">
+
+    <div class="auth-split-card signup-card">
+        <!-- Left: Visual & Branding Section -->
+        <div class="auth-visual-side">
+            <div class="auth-brand">
+                <span class="brand-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </span>
+                <span class="brand-text"><span class="highlight">Bite</span>Rush</span>
+            </div>
+
+            <div class="auth-visual-hero">
+                <div class="auth-visual-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span>Join the Gastronomy Community</span>
+                </div>
+                <h1 class="auth-visual-title">Begin Your Culinary <span class="highlight">Journey</span></h1>
+                <p class="auth-visual-desc">Create your free BiteRush account to order food from top restaurants, enjoy instant checkout, and track orders in real-time.</p>
+
+                <div class="auth-features-list">
+                    <div class="auth-feature-item">
+                        <span class="check-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>Personalized dish recommendations</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <span class="check-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>Fast 1-click doorstep reorders</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <span class="check-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>Itemized past orders & downloadable receipts</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-visual-footer">
+                <p>&copy; 2026 BiteRush. Crafted for gastronomy lovers.</p>
+            </div>
+        </div>
+
+        <!-- Right: Registration Form Section -->
+        <div class="auth-form-side">
+            <div class="auth-header">
+                <h2 class="auth-title">Create Account</h2>
+                <p class="auth-subtitle">Fill in your information below to register your personal profile.</p>
+            </div>
+
+            <!-- Sign Up Form: Preserving exact action, method, and input names -->
+            <form action="SignUpServlet" method="post" class="auth-form" id="signupForm">
+                <!-- Row 1: First Name & Last Name -->
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="firstnameInput" class="form-label">First Name</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon" aria-hidden="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </span>
+                            <input type="text"
+                                   id="firstnameInput"
+                                   name="firstname"
+                                   placeholder="First name"
+                                   required
+                                   class="auth-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastnameInput" class="form-label">Last Name</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon" aria-hidden="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </span>
+                            <input type="text"
+                                   id="lastnameInput"
+                                   name="lastname"
+                                   placeholder="Last name"
+                                   required
+                                   class="auth-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Username & Role -->
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="usernameInput" class="form-label">Username</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon" aria-hidden="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                    <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                                </svg>
+                            </span>
+                            <input type="text"
+                                   id="usernameInput"
+                                   name="username"
+                                   placeholder="Choose username"
+                                   required
+                                   class="auth-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roleInput" class="form-label">Role</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon" aria-hidden="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                </svg>
+                            </span>
+                            <input type="text"
+                                   id="roleInput"
+                                   name="role"
+                                   value="Customer"
+                                   required
+                                   class="auth-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Email & Phone Number -->
+                <div class="form-row-2col">
+                    <div class="form-group">
+                        <label for="emailInput" class="form-label">Email Address</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon" aria-hidden="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </span>
+                            <input type="email"
+                                   id="emailInput"
+                                   name="email"
+                                   placeholder="name@example.com"
+                                   required
+                                   class="auth-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneInput" class="form-label">Phone Number</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon" aria-hidden="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </span>
+                            <input type="tel"
+                                   id="phoneInput"
+                                   name="phone_number"
+                                   placeholder="10-digit mobile number"
+                                   required
+                                   class="auth-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Field -->
+                <div class="form-group">
+                    <label for="addressInput" class="form-label">Default Delivery Address</label>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon" aria-hidden="true">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </span>
+                        <input type="text"
+                               id="addressInput"
+                               name="address"
+                               placeholder="House / flat no., street, city, landmark"
+                               required
+                               class="auth-input">
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon" aria-hidden="true">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </span>
+                        <input type="password"
+                               id="passwordInput"
+                               name="password"
+                               placeholder="Create a secure password"
+                               required
+                               class="auth-input">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-auth-submit" id="signupSubmitBtn">
+                    <span>Create Account</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Navigation Links -->
+            <p class="auth-switch-text">
+                Already have an account? 
+                <a href="login.html" class="auth-switch-link">Login</a>
+            </p>
+
+            <a href="restaurant.jsp" class="auth-back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back to Restaurants</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

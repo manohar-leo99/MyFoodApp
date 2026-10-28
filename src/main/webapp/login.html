@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | BiteRush</title>
+    <meta name="description" content="Sign in to your BiteRush account to explore top restaurants and order delicious food.">
+
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <!-- BiteRush Stylesheets -->
+    <link rel="stylesheet" href="css/global.css?v=4">
+    <link rel="stylesheet" href="css/common.css?v=4">
+    <link rel="stylesheet" href="css/auth.css?v=4">
+</head>
+<body class="auth-page">
+
+    <div class="auth-split-card">
+        <!-- Left: Visual & Branding Section -->
+        <div class="auth-visual-side">
+            <div class="auth-brand">
+                <span class="brand-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </span>
+                <span class="brand-text"><span class="highlight">Bite</span>Rush</span>
+            </div>
+
+            <div class="auth-visual-hero">
+                <div class="auth-visual-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Instant Doorstep Delivery</span>
+                </div>
+                <h1 class="auth-visual-title">Craving Something <span class="highlight">Delicious?</span></h1>
+                <p class="auth-visual-desc">Sign in to unlock curated dining recommendations, one-tap reorders, and real-time live delivery updates.</p>
+
+                <div class="auth-features-list">
+                    <div class="auth-feature-item">
+                        <span class="check-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>Over 1,000+ hand-selected gourmet kitchens</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <span class="check-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>Average 30-minute expedited doorstep delivery</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <span class="check-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>Safe & secure Cash, UPI, and Card checkouts</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-visual-footer">
+                <p>&copy; 2026 BiteRush. Crafted for gastronomy lovers.</p>
+            </div>
+        </div>
+
+        <!-- Right: Authentication Form Section -->
+        <div class="auth-form-side">
+            <div class="auth-header">
+                <h2 class="auth-title">Welcome Back</h2>
+                <p class="auth-subtitle">Please enter your username and password to access your account.</p>
+            </div>
+
+            <!-- Login Form: Preserving exact action, method, and input names -->
+            <form action="LoginServlet" method="post" class="auth-form" id="loginForm">
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="usernameInput" class="form-label">Username</label>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon" aria-hidden="true">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                        <input type="text"
+                               id="usernameInput"
+                               name="username"
+                               placeholder="Enter your username"
+                               required
+                               class="auth-input">
+                    </div>
+                </div>
+
+                <!-- Password Field with Forgot Password Link -->
+                <div class="form-group">
+                    <div class="form-label-row">
+                        <label for="passwordInput" class="form-label">Password</label>
+                        <a href="forgotPassword.jsp" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon" aria-hidden="true">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </span>
+                        <input type="password"
+                               id="passwordInput"
+                               name="password"
+                               placeholder="Enter your password"
+                               required
+                               class="auth-input">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-auth-submit" id="loginSubmitBtn">
+                    <span>Sign In</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Navigation Links -->
+            <p class="auth-switch-text">
+                Don't have an account? 
+                <a href="signup.html" class="auth-switch-link">Sign Up</a>
+            </p>
+
+            <a href="restaurant.jsp" class="auth-back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back to Restaurants</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

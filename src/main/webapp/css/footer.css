@@ -1,0 +1,203 @@
+/* ==========================================================================
+   BiteRush - footer.css
+   Midnight Saffron Footer (4-Column Grid: 2fr 1fr 1fr 1fr)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--surface, #1A1816);
+  border-top: 1px solid var(--border, #2E2A27);
+  padding: 64px 0 28px;
+  margin-top: auto;
+  color: var(--text-muted, #A39B90);
+  width: 100%;
+}
+
+/* ==========================================================================
+   4-Column CSS Grid (2fr 1fr 1fr 1fr)
+   ========================================================================== */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Column 1: Brand & Tagline
+   ========================================================================== */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text, #F5F0E8);
+  font-family: var(--font-head, 'Playfair Display', serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  transition: opacity 200ms ease;
+}
+
+.footer-brand:hover {
+  opacity: 0.92;
+}
+
+.footer-brand-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary, #F5A623) 0%, #D98207 100%);
+  color: #0F0E0D;
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.3);
+  flex-shrink: 0;
+}
+
+.footer-brand-icon svg {
+  stroke: #0F0E0D;
+}
+
+.footer-brand-name {
+  line-height: 1;
+}
+
+.footer-brand-name .highlight {
+  color: var(--primary, #F5A623);
+}
+
+.footer-tagline {
+  color: var(--text-muted, #A39B90);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  max-width: 340px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Headings Aligned on One Baseline
+   ========================================================================== */
+.footer-heading {
+  font-family: var(--font-head, 'Playfair Display', serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text, #F5F0E8);
+  margin-top: 0;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Columns 2 & 3: Navigation Links
+   ========================================================================== */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  color: var(--text-muted, #A39B90);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease;
+  display: inline-block;
+  width: fit-content;
+}
+
+.footer-link:hover {
+  color: var(--primary, #F5A623);
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Column 4: Our Promise (Plain Text with Small Check Icons)
+   ========================================================================== */
+.footer-promise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.footer-promise-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.88rem;
+  color: var(--text, #F5F0E8);
+  line-height: 1.4;
+}
+
+.promise-icon {
+  color: var(--primary, #F5A623);
+  stroke: var(--primary, #F5A623);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Thin Copyright Bar Below
+   ========================================================================== */
+.footer-bottom {
+  border-top: 1px solid var(--border, #2E2A27);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.84rem;
+  color: var(--text-muted, #A39B90);
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.footer-subtext {
+  margin: 0;
+  color: rgba(163, 155, 144, 0.7);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (< 768px: Stacks to 1 Column)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
